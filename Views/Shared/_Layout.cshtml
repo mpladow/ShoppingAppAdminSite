@@ -6,7 +6,13 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css" />
+
+    <script type="text/javascript" src="DataTables/datatables.min.js"></script>
     <script>
         function openNav() {
             $('#indexSideNav').css("width", 200);
@@ -24,11 +30,13 @@
 <body>
 
     <div id="indexSideNav" class="sidenav">
-        @Html.ActionLink("Home", "Index", "Home", new { @class = "navbarItem" })
+        @Html.ActionLink("Home", "Index", "Home", null, new { @class = "navbarItem" })
         <a class="fa fa-home navbarItem-collapse" display="none"></a>
-        @Html.ActionLink("About", "About", "Home", new { @class = "navbarItem" })
+        @Html.ActionLink("Products", "Index", "Inventory", null, new { @class = "navbarItem" })
+        <a class="fa fa-clipboard-list navbarItem-collapse" display="none"></a>
+        @Html.ActionLink("About", "About", "Home", null, new { @class = "navbarItem" })
         <a class="fa fa-info navbarItem-collapse" display="none"></a>
-        @Html.ActionLink("Contact", "Contact", "Home", new { @class = "navbarItem" })
+        @Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "navbarItem" })
         <a class="fa fa-address-book navbarItem-collapse" display="none"></a>
     </div>
 
@@ -36,12 +44,10 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Michael La Dow</p>
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+
 </body>
 </html>

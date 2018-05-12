@@ -1,0 +1,35 @@
+﻿@model IEnumerable<OnlineStore_ADMIN.Entities.Product>
+
+
+<h2>Product List</h2>
+<button class="btn btn-default">Add products</button>
+
+<table id="products" class="table-responsive">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Currently Stocked?</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(item.Name, "Edit", "Inventory",new {id=item.ProductID}, null)</td>
+                <td>@item.Description</td>
+                <td>@item.Quantity</td>
+                <td>@item.Price</td>
+                <td>@item.IsStocked?</td>
+            </tr>
+        }
+    </thead>
+
+</table>
+<script>
+    $(function () {
+        $('#products').DataTable();
+    });
+</script>
+
+
