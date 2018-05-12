@@ -192,6 +192,38 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Entities\Customer.cs">
+      <DependentUpon>OrderingSystemEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Order.cs">
+      <DependentUpon>OrderingSystemEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\OrderingSystemEntities.Context.cs" />
+    <Compile Include="Entities\OrderingSystemEntities.Context1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderingSystemEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\OrderingSystemEntities.cs" />
+    <Compile Include="Entities\OrderingSystemEntities.Designer.cs">
+      <DependentUpon>OrderingSystemEntities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\OrderingSystemEntities1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderingSystemEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\OrderingSystemEntities1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderingSystemEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Product.cs">
+      <DependentUpon>OrderingSystemEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Title.cs">
+      <DependentUpon>OrderingSystemEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -204,6 +236,14 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Entities\OrderingSystemEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>OrderingSystemEntities.Context1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entities\OrderingSystemEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>OrderingSystemEntities1.cs</LastGenOutput>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -212,6 +252,13 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="Entities\OrderingSystemEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OrderingSystemEntities1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Entities\OrderingSystemEntities.edmx.diagram">
+      <DependentUpon>OrderingSystemEntities.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -274,6 +321,9 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
